@@ -1,14 +1,11 @@
-version: "0"
+version: "3"
 
 services:
   keycloak:
     image: quay.io/keycloak/keycloak:legacy
 
-    ports:
-      - 8080:8080
-
     environment:
-      DB_VENDOR: MYSQL
+      DB_VENDOR: mysql
 
       DB_DATABASE: keycloak
 
@@ -18,7 +15,9 @@ services:
 
       DB_PASSWORD: password
 
-      DB_HOST: //aws end point
+      DB_ADDR: keycloak.cvnyifoye55o.us-east-1.rds.amazonaws.com
+
+      DB_PORT: 3306:3306
 
       KEYCLOAK_USER: admin
 
